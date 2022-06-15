@@ -8,8 +8,8 @@ spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: http
+      nodePort: 30719
       protocol: TCP
-      name: http
+      targetPort: 8080
   selector:
     {{- include "demojava.selectorLabels" . | nindent 4 }}
